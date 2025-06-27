@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emete</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="loaded">
+    <div id="particles-js"></div>
+    
+    <div id="loading-screen">
+        <button class="reveal-button" id="reveal-button">☆</button>
+    </div>
+
+    <div id="main-content" class="container hidden">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <img id="discord-avatar" src="images/iconprofile.png" alt="Avatar">
+                    <div id="status-indicator"></div>
+                </div>
+                <h1 id="discord-username">emete</h1>
+            </div>
+            
+            <div class="badges-grid">
+                <div class="badge" draggable="false">
+                    <img src="images/nitro.png" alt="Nitro">
+                </div>
+                <div class="badge" draggable="false">
+                    <img src="images/boosterup.png" alt="Boost">
+                </div>
+            </div>
+            
+            <div class="connections">
+                <a href="https://github.com/emetesec" class="connection" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://t.me/hackersec" class="connection" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/particles.min.js"></script>
+    <script src="js/script.js"></script>
+
+<script>
+   
+
+    function detectDevTools(allow) {
+        if(typeof allow === 'undefined') allow = true;
+
+        var element = new Image();
+        Object.defineProperty(element, 'id', {
+            get: function() {
+                if(allow) {
+                    
+                }
+            }
+        });
+
+        console.log('%cDevTools', element);
+    }
+
+    
+    setInterval(detectDevTools, 50);
+
+    
+    document.onselectstart = function() { return false; }
+
+    
+    document.oncontextmenu = function() { return false; }
+
+    
+    document.onkeydown = function(e) {
+        
+        if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
+            
+            return false;
+        }
+    }
+
+    
+    window.addEventListener('mousedown', function(e) {
+        if (e.target === document.documentElement) {
+            
+        }
+    });
+
+    
+    (function() {
+        var devtools = {
+            open: false,
+            orientation: null
+        };
+        var threshold = 160;
+        var emitEvent = function(state, orientation) {
+            window.dispatchEvent(new CustomEvent('devtoolschange', {
+                detail: {
+                    open: state,
+                    orientation: orientation
+                }
+            }));
+        };
+
+        setInterval(function() {
+            var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+            var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+            var orientation = widthThreshold ? 'vertical' : 'horizontal';
+
+            if (!(heightThreshold && widthThreshold) &&
+                ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
+                if (!devtools.open || devtools.orientation !== orientation) {
+                    emitEvent(true, orientation);
+                }
+                devtools.open = true;
+                devtools.orientation = orientation;
+            } else {
+                if (devtools.open) {
+                    emitEvent(false, null);
+                }
+                devtools.open = false;
+                devtools.orientation = null;
+            }
+        }, 100);
+
+        window.addEventListener('devtoolschange', function(e) {
+            if (e.detail.open) {
+                
+            }
+        });
+    })();
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            document.body.classList.add("loaded");
+        }, 100); 
+    });
+</script>
+
+<script>
+    
+    document.onselectstart = function() { return false; }
+    
+    
+    document.oncontextmenu = function() { return false; } 
+
+        
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'F12' || event.keyCode === 123) {
+                event.preventDefault();
+            }
+        });
+
+            
+            setInterval(function() {
+            console.log('%cBy Emete <3!', 'color: red; font-size: 24px;');
+            console.log('%cMake money not friends', 'color: red; font-size: 18px;');
+        }, 1000);
+
+        mode = 1;
+document.oncontextmenu = new Function("return false;")
+
+function getKey(e) {
+    var key = e.keyCode;
+    console.log(key);
+
+    if (key == 16 || key == 17) {
+        mode = 2;
+    }
+
+    if (mode == 1) {
+        if (key == 123) {
+            return false;
+        }
+    } else {
+        if (key == 73 || key == 74 || key == 85) {
+            return false;
+        } else {
+            if (key == 123) {
+                return false;
+            }
+        }
+    }
+}
+window.onkeydown = getKey;
+    </script>
+    
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const elementsToBlock = document.querySelectorAll('.profile-img, .badges img');
+    
+        elementsToBlock.forEach(element => {
+          element.setAttribute('draggable', 'false');
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+            
+            const images = document.querySelectorAll('.avatar, .badge');
+            
+            images.forEach(img => {
+                
+                img.setAttribute('draggable', 'false');
+                
+                
+                img.addEventListener('contextmenu', (e) => {
+                    e.preventDefault();
+                    return false;
+                });
+                
+                
+                img.addEventListener('selectstart', (e) => {
+                    e.preventDefault();
+                    return false;
+                });
+                
+                
+                img.addEventListener('mousedown', (e) => {
+                    if(e.button === 2) { 
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+            });
+        });
+    </script>
+ </body></html>
